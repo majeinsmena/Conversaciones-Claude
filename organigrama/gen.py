@@ -72,7 +72,7 @@ def build(func):
         ("Distribución de verduras",["Rocío Gamboa y Luis Padilla (*)","Abastecimiento de verduras"],0),
         ("Distribución de pesados",["Alexis Chiluiza y Javier (*)","Pesan avena, fideos, arroz a granel","y empacan en varios gramajes"],0)]),
      ("PRODUCCIÓN",["Crianza y faenamiento de pollo:","granja, proceso y transporte"],"",[
-        ("Jefe de granja",["Oliver Tipán","Coordinación de la granja,","bioseguridad y personal"],0),
+        ("Jefe de granja",["Holger Tipán","Coordinación de la granja,","bioseguridad y personal"],0),
         ("Galponero y asistente de granja",["Por designar","Cuidado de aves,","alimentación y registros"],1),
         ("Faenadores y preparados",["Por designar","Faenado, proceso y","empaque del pollo"],1),
         ("Choferes de producción",["Por designar","Traslado, refrigerado","y entrega del pollo"],1)]),
