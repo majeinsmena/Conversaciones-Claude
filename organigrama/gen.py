@@ -61,15 +61,16 @@ def build(func):
         ("Compras y proveedores",["Verónica Teneda","Negociación, compras y precios"],0),
         ("Marketing y publicidad",["Verónica Teneda (supervisa)","Contrata proveedor externo de marketing"],0),
         ("Logística y bodega central",["Jorge Leime","Abastecimiento a los 13 locales"],0),
-        ("Choferes de logística",["Por designar","Transporte a los 13 locales"],1)]),
+        ("Choferes de logística (4)",["Marco Rosero, Raúl Naula,","Henry Quispe, César Canchina","Transporte a los 13 locales"],0)]),
      ("DISTRIBUCIÓN",["Luis David Teneda","Jefe de Agencia Pingüino y","línea Unilever"],"",[
         ("Agencia Pingüino y línea Unilever",["Administrador: Juan Carlos Vallejo","Rutas, cartera y cadena de frío"],0),
         ("Vendedores (4)",["Por designar","Venta en ruta y atención a clientes"],1),
-        ("Choferes (2)",["Por designar","Transporte y entrega de pedidos"],1),
+        ("Choferes (2)",["Luis Rodríguez, Edison Tarisa","Transporte y entrega de pedidos"],0),
         ("Despachador (1)",["Por designar","Preparación y despacho de pedidos"],1),
         ("Técnico de bodega",["Por designar","Reparación de fríos"],1)]),
      ("AGROINDUSTRIA",["Por designar","Distribución, pesado y empaque","para los locales"],"",[
         ("Distribución avícola",["Alexis Chiluiza y Javier (*)","Distribución del pollo"],0),
+        ("Chofer de distribución de pollo",["José Haro","Transporte y entrega del pollo"],0),
         ("Distribución de verduras",["Rocío Gamboa y Luis Padilla (*)","Abastecimiento de verduras"],0),
         ("Distribución de pesados",["Alexis Chiluiza y Javier (*)","Pesan avena, fideos, arroz a granel","y empacan en varios gramajes"],0)]),
      ("PRODUCCIÓN",["Crianza y faenamiento de pollo:","granja, proceso y transporte"],"",[
