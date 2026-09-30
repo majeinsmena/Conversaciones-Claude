@@ -60,7 +60,8 @@ def build(func):
         ("Compras y proveedores",["Mauro Carvajal","Negociación, compras y precios"],0),
         ("Compras y proveedores",["Verónica Teneda","Negociación, compras y precios"],0),
         ("Marketing y publicidad",["Verónica Teneda (supervisa)","Contrata proveedor externo de marketing"],0),
-        ("Logística y bodega central",["Jorge Leime","Abastecimiento a los 13 locales"],0)]),
+        ("Logística y bodega central",["Jorge Leime","Abastecimiento a los 13 locales"],0),
+        ("Choferes de logística",["Por designar","Transporte a los 13 locales"],1)]),
      ("DISTRIBUCIÓN",["Luis David Teneda","Jefe de Agencia Pingüino y","línea Unilever"],"",[
         ("Agencia Pingüino y línea Unilever",["Administrador: Juan Carlos Vallejo","Rutas, cartera y cadena de frío"],0),
         ("Vendedores",["Por designar","Venta en ruta y atención a clientes"],1),
@@ -69,7 +70,7 @@ def build(func):
      ("AGROINDUSTRIA",["Por designar","Distribución, pesado y empaque","para los locales"],"",[
         ("Distribución avícola",["Alexis Chiluiza y Javier (*)","Distribución del pollo"],0),
         ("Distribución de verduras",["Rocío Gamboa y Luis Padilla (*)","Abastecimiento de verduras"],0),
-        ("Pesados",["Alexis Chiluiza y Javier (*)","Pesan avena, fideos, arroz a granel","y empacan en varios gramajes"],0)]),
+        ("Distribución de pesados",["Alexis Chiluiza y Javier (*)","Pesan avena, fideos, arroz a granel","y empacan en varios gramajes"],0)]),
      ("PRODUCCIÓN",["Crianza y faenamiento de pollo:","granja, proceso y transporte"],"",[
         ("Jefe de granja",["Oliver Tipán","Coordinación de la granja,","bioseguridad y personal"],0),
         ("Galponero y asistente de granja",["Por designar","Cuidado de aves,","alimentación y registros"],1),
@@ -82,8 +83,8 @@ def build(func):
         ("Asistente del departamento",["Por designar","Apoyo administrativo a Talento Humano"],1)]),
      ("ADMINISTRACIÓN Y FINANZAS",["Martha Hidalgo","Jefa financiera","Servicios administrativos y de apoyo"],"",[
         ("Contabilidad",["2 jefaturas (contable e inventarios)","y 7 puestos de equipo"],0,[
+            ("Contadora general",["Verónica Teneda"],0,1),
             ("Jefatura contable",["Martha Ramírez"],0,1),
-            ("Contadora general",["Verónica Teneda"],0,2),
             ("Técnico contable",["Cuadre de caja","Por designar"],1,2),
             ("Técnico contable",["Comprobantes","Por designar"],1,2),
             ("Técnico contable",["Efectivizaciones","Por designar"],1,2),
