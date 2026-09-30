@@ -25,7 +25,7 @@ class S:
 def build(func):
     s=S()
     title="ORGANIGRAMA FUNCIONAL PROPUESTO (con nombres y funciones)" if func else "ORGANIGRAMA ESTRUCTURAL PROPUESTO (sin nombres)"
-    H=1700 if func else 1300
+    H=1790 if func else 1360
     s.text(W/2,42,"CODELITESA S.A. – SUPERMERCADOS MI CASERITA",30,weight="700",fill="#1b2a41")
     s.text(W/2,74,title,19,weight="600",fill="#555")
     cx=W/2
@@ -82,12 +82,13 @@ def build(func):
         ("Capacitación y desarrollo",["Fernanda Teneda","Formación y clima laboral"],0),
         ("Asistente del departamento",["Por designar","Apoyo administrativo a Talento Humano"],1)]),
      ("ADMINISTRACIÓN Y FINANZAS",["Martha Hidalgo","Jefa financiera","Servicios administrativos y de apoyo"],"",[
-        ("Contabilidad",["2 jefaturas (contable e inventarios)","y 7 puestos de equipo"],0,[
+        ("Contabilidad",["Contadora general, 2 jefaturas","y 7 puestos de equipo"],0,[
             ("Contadora general",["Verónica Teneda"],0,1),
             ("Jefatura contable",["Martha Ramírez"],0,1),
-            ("Técnico contable",["Cuadre de caja","Por designar"],1,2),
-            ("Técnico contable",["Comprobantes","Por designar"],1,2),
-            ("Técnico contable",["Efectivizaciones","Por designar"],1,2),
+            ("Técnico contable",["Cajas, transferencias y","gastos bancarios","Andrés Mera"],0,2),
+            ("Técnico contable",["Proceso general de cajas","David Eugenio"],0,2),
+            ("Técnico contable",["Ingreso de facturas y","notas de crédito","Byron Torres"],0,2),
+            ("Técnico contable",["Efectivizaciones","Michelle Padilla"],0,2),
             ("Jefatura de inventarios",["Paulina Gamboa"],0,1),
             ("Asistente contable",["Ingreso de compras","Por designar"],1,2),
             ("Asistente contable",["Manejo de matriz","Por designar"],1,2),
@@ -114,11 +115,12 @@ def build(func):
                 sg=8; pos=[]
                 y+=10
                 for (st,sl,sp,lv) in subs:
-                    sh=(40 if func else 34) if lv==1 else (52 if func else 44)
+                    nl=len(sl) if func else (len(sl)-1 if len(sl)>1 else 0)
+                    sh=(40 if func else 34) if lv==1 else int(16.5+15*nl+12)
                     ind=34 if lv==1 else 52
                     pend="Por designar" in sl[-1]
                     if func: s.box(x+ind,y,w-ind-14,sh,st,sl,fill="#fff",stroke=stroke,pending=pend,tsize=12.5,lsize=11)
-                    else: s.box(x+ind,y,w-ind-14,sh,st,sl[:1] if (lv==2 and len(sl)>1 and "Por designar" in sl[-1]) else [],fill="#fff",stroke=stroke,tsize=12.5,lsize=11)
+                    else: s.box(x+ind,y,w-ind-14,sh,st,sl[:-1] if (lv==2 and len(sl)>1) else [],fill="#fff",stroke=stroke,tsize=12.5,lsize=11)
                     pos.append((y,sh,lv)); y+=sh+sg
                 l1=[p for p in pos if p[2]==1]
                 s.line(x+22,pos[0][0]-10,x+22,l1[-1][0]+l1[-1][1]/2)
