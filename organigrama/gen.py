@@ -66,11 +66,11 @@ def build(func):
         ("Vendedores",["Por designar","Venta en ruta y atención a clientes"],1),
         ("Choferes",["Por designar","Transporte y entrega de pedidos"],1),
         ("Despachadores",["Por designar","Preparación y despacho de pedidos"],1)]),
-     ("AGROINDUSTRIA",["Por designar","Abastece a los supermercados","con producto propio"],"",[
-        ("Producción avícola",["Alexis Chiluiza y Javier (*)","Engorde y planta de proceso"],0),
-        ("Línea de verduras",["Rocío Gamboa y Luis Padilla (*)","Cultivo y abastecimiento"],0),
-        ("Pesados",["Alexis Chiluiza y Javier (*)","Área de pesados"],0)]),
-     ("PRODUCCIÓN",["Producción de pollo:","granja, faenado y transporte"],"",[
+     ("AGROINDUSTRIA",["Por designar","Distribución de pollo y verduras","a los supermercados"],"",[
+        ("Distribución avícola",["Alexis Chiluiza y Javier (*)","Distribución del pollo"],0),
+        ("Distribución de verduras",["Rocío Gamboa y Luis Padilla (*)","Abastecimiento de verduras"],0),
+        ("Pesados",["Alexis Chiluiza y Javier (*)","Pesado y despacho"],0)]),
+     ("PRODUCCIÓN",["Crianza y faenamiento de pollo:","granja, proceso y transporte"],"",[
         ("Jefe de granja",["Oliver Tipán","Coordinación de la granja,","bioseguridad y personal"],0),
         ("Galponero y asistente de granja",["Por designar","Cuidado de aves,","alimentación y registros"],1),
         ("Faenadores y preparados",["Por designar","Faenado, proceso y","empaque del pollo"],1),
