@@ -1,6 +1,6 @@
 import html
-W=1800
-COL=[("#fff4e0","#e0a030"),("#e4f3e4","#3c8c3c"),("#e6eefb","#3b6cb7"),("#f1e8fa","#7a4ab0"),("#fde8f1","#c0478a"),("#e3f4f4","#2a8c8c")]
+W=2070
+COL=[("#fff4e0","#e0a030"),("#e4f3e4","#3c8c3c"),("#e6eefb","#3b6cb7"),("#f1e8fa","#7a4ab0"),("#eaf1dc","#6f8f2a"),("#fde8f1","#c0478a"),("#e3f4f4","#2a8c8c")]
 GREEN=("#e4f3e4","#3c8c3c")
 def esc(s):return html.escape(s)
 class S:
@@ -33,8 +33,8 @@ def build(func):
     s.box(cx-200,100,400,62 if not func else 76,"JUNTA GENERAL DE ACCIONISTAS",["Familia propietaria – define estrategia y nombra la auditoría"] if func else [],*GREEN[:0],fill="#fde9e9",stroke="#b84a4a")
     jb=100+(76 if func else 62)
     # auditoria
-    s.box(1280,100,440,76 if func else 62,"AUDITORÍA EXTERNA / CONTROL INTERNO",["Por designar (control interno) – reporta a la Junta","Verifica cajas, inventarios y procedimientos"] if func else ["Reportan a la Junta (independientes)"],fill="#eef",stroke="#555",dashed=True,pending=False,tsize=16)
-    s.line(cx+200,100+ (38 if func else 31),1280,100+(38 if func else 31),True)
+    s.box(cx+380,100,440,76 if func else 62,"AUDITORÍA EXTERNA / CONTROL INTERNO",["Por designar (control interno) – reporta a la Junta","Verifica cajas, inventarios y procedimientos"] if func else ["Reportan a la Junta (independientes)"],fill="#eef",stroke="#555",dashed=True,pending=False,tsize=16)
+    s.line(cx+200,100+ (38 if func else 31),cx+380,100+(38 if func else 31),True)
     # Presidencia
     py=jb+36
     s.line(cx,jb,cx,py)
@@ -45,7 +45,7 @@ def build(func):
     s.box(cx-200,gy,400,90 if func else 56,"GERENCIA GENERAL",["Luis Teneda","Dirección de la operación, planificación,","control y representación legal"] if func else [],fill="#e6eefb",stroke="#3b6cb7")
     gb=gy+(90 if func else 56)
     # columns
-    w,gap,x0=275,14,40
+    w,gap,x0=272,14,40
     hy=gb+52
     hh=120 if func else 70
     bus=gb+26
@@ -56,17 +56,25 @@ def build(func):
         ("Administradores de local (13)",["Apertura, caja, personal e","inventario de cada local"],0),
         ("Asistentes administrativos (13)",["Uno por local","Apoyo administrativo al administrador"],1),
         ("Percheros, cajeros y bodega",["Atención al cliente, reposición","y manejo de caja"],0)]),
-     ("COMERCIAL Y COMPRAS",["Luis David Teneda","Jefe de Comercial y Compras","Compras, precios y abastecimiento"],"",[
+     ("COMERCIAL Y COMPRAS",["Luis David Teneda","Jefe comercial y de compras","Compras, precios y abastecimiento"],"",[
         ("Compras y proveedores",["Mauro Carvajal","Negociación, compras y precios"],0),
         ("Compras y proveedores",["Verónica Teneda","Negociación, compras y precios"],0),
         ("Marketing y publicidad",["Verónica Teneda (supervisa)","Contrata proveedor externo de marketing"],0),
         ("Logística y bodega central",["Jorge Leime","Abastecimiento a los 13 locales"],0)]),
      ("DISTRIBUCIÓN",["Luis David Teneda","Jefe de Agencia Pingüino y","línea Unilever"],"",[
-        ("Agencia Pingüino y línea Unilever",["Administrador: Juan Carlos Vallejo","Rutas, cartera y cadena de frío"],1)]),
+        ("Agencia Pingüino y línea Unilever",["Administrador: Juan Carlos Vallejo","Rutas, cartera y cadena de frío"],0),
+        ("Vendedores",["Por designar","Venta en ruta y atención a clientes"],1),
+        ("Choferes",["Por designar","Transporte y entrega de pedidos"],1),
+        ("Despachadores",["Por designar","Preparación y despacho de pedidos"],1)]),
      ("AGROINDUSTRIA",["Por designar","Abastece a los supermercados","con producto propio"],"",[
         ("Producción avícola",["Alexis Chiluiza y Javier (*)","Engorde y planta de proceso"],0),
         ("Línea de verduras",["Rocío Gamboa y Luis Padilla (*)","Cultivo y abastecimiento"],0),
         ("Pesados",["Alexis Chiluiza y Javier (*)","Área de pesados"],0)]),
+     ("PRODUCCIÓN",["Producción de pollo:","granja, faenado y transporte"],"",[
+        ("Jefe de granja",["Oliver Tipán","Coordinación de la granja,","bioseguridad y personal"],0),
+        ("Galponero y asistente de granja",["Por designar","Cuidado de aves,","alimentación y registros"],1),
+        ("Faenadores y preparados",["Por designar","Faenado, proceso y","empaque del pollo"],1),
+        ("Choferes de producción",["Por designar","Traslado, refrigerado","y entrega del pollo"],1)]),
      ("TALENTO HUMANO",["Fernanda Teneda","Jefa de Talento Humano","Personal de todas las unidades"],"",[
         ("Selección y contratación",["Fernanda Teneda","Reclutamiento e ingreso de personal"],0),
         ("Nómina y beneficios",["Fernanda Teneda","Pago de personal y beneficios"],0),
@@ -109,7 +117,7 @@ def build(func):
                     ind=34 if lv==1 else 52
                     pend="Por designar" in sl[-1]
                     if func: s.box(x+ind,y,w-ind-14,sh,st,sl,fill="#fff",stroke=stroke,pending=pend,tsize=12.5,lsize=11)
-                    else: s.box(x+ind,y,w-ind-14,sh,st,sl[:1] if lv==2 else [],fill="#fff",stroke=stroke,tsize=12.5,lsize=11)
+                    else: s.box(x+ind,y,w-ind-14,sh,st,sl[:1] if (lv==2 and len(sl)>1 and "Por designar" in sl[-1]) else [],fill="#fff",stroke=stroke,tsize=12.5,lsize=11)
                     pos.append((y,sh,lv)); y+=sh+sg
                 l1=[p for p in pos if p[2]==1]
                 s.line(x+22,pos[0][0]-10,x+22,l1[-1][0]+l1[-1][1]/2)
@@ -124,7 +132,7 @@ def build(func):
                             s.line(x+46,py_+ph,x+46,kids[-1][0]+kids[-1][1]/2)
                             for q in kids: s.line(x+46,q[0]+q[1]/2,x+52,q[0]+q[1]/2)
                 y+=2
-    xs=[x0+i*(w+gap)+w/2 for i in range(6)]
+    xs=[x0+i*(w+gap)+w/2 for i in range(7)]
     s.line(xs[0],bus,xs[-1],bus)
     # legend
     ly=H-96
