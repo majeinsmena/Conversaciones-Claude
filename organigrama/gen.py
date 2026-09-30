@@ -1,6 +1,6 @@
 import html
 W=1800
-COL=[("#fff4e0","#e0a030"),("#e4f3e4","#3c8c3c"),("#e6eefb","#3b6cb7"),("#f1e8fa","#7a4ab0"),("#e3f4f4","#2a8c8c")]
+COL=[("#fff4e0","#e0a030"),("#e4f3e4","#3c8c3c"),("#e6eefb","#3b6cb7"),("#f1e8fa","#7a4ab0"),("#fde8f1","#c0478a"),("#e3f4f4","#2a8c8c")]
 GREEN=("#e4f3e4","#3c8c3c")
 def esc(s):return html.escape(s)
 class S:
@@ -25,7 +25,7 @@ class S:
 def build(func):
     s=S()
     title="ORGANIGRAMA FUNCIONAL PROPUESTO (con nombres y funciones)" if func else "ORGANIGRAMA ESTRUCTURAL PROPUESTO (sin nombres)"
-    H=1330 if func else 960
+    H=1700 if func else 1300
     s.text(W/2,42,"CODELITESA S.A. – SUPERMERCADOS MI CASERITA",30,weight="700",fill="#1b2a41")
     s.text(W/2,74,title,19,weight="600",fill="#555")
     cx=W/2
@@ -38,43 +38,56 @@ def build(func):
     # Presidencia
     py=jb+36
     s.line(cx,jb,cx,py)
-    s.box(cx-200,py,400,80 if func else 56,"PRESIDENCIA",["Marta Hidalgo","Estrategia, supervisión y relación con la Junta"] if func else [],fill="#e4f3e4",stroke="#3c8c3c")
+    s.box(cx-200,py,400,80 if func else 56,"PRESIDENCIA",["Martha Hidalgo","Estrategia, supervisión y relación con la Junta"] if func else [],fill="#e4f3e4",stroke="#3c8c3c")
     pb=py+(80 if func else 56)
     gy=pb+36
     s.line(cx,pb,cx,gy)
     s.box(cx-200,gy,400,90 if func else 56,"GERENCIA GENERAL",["Luis Teneda","Dirección de la operación, planificación,","control y representación legal"] if func else [],fill="#e6eefb",stroke="#3b6cb7")
     gb=gy+(90 if func else 56)
     # columns
-    w,gap,x0=320,30,40
+    w,gap,x0=275,14,40
     hy=gb+52
     hh=120 if func else 70
     bus=gb+26
     s.line(cx,gb,cx,bus)
     cols=[
-     ("SUPERMERCADOS MI CASERITA",["Mauro Carvajal","13 locales: ventas, servicio y","cumplimiento de políticas"],"13 locales",[
-        ("Supervisoras",["Daniela Vidal / Vanessa (apellido por confirmar)","Visitas y control de los locales"],0),
+     ("SUPERMERCADOS MI CASERITA",["Mauro Carvajal","Jefe de Supermercados","13 locales: ventas y servicio"],"13 locales",[
+        ("Supervisoras",["Daniela Vidal / Vanessa Yanchapanta","Visitas y control de los locales"],0),
         ("Administradores de local (13)",["Apertura, caja, personal e","inventario de cada local"],0),
-        ("Percheros, cajeros y bodega",["Atención al cliente, reposición","y manejo de caja"],0),
-        ("Control de inventarios y mermas",["Por designar","Conteos, vencimientos y pérdidas"],1)]),
-     ("COMERCIAL Y COMPRAS",["Por designar","Margen: negociación con proveedores,","precios y abastecimiento"],"",[
-        ("Compras y proveedores",["Por designar","Negociación y compras por volumen"],1),
-        ("Precios y ofertas",["Por designar","Lista de precios y promociones"],1),
-        ("Marketing y publicidad",["Por designar","Ofertas semanales, volantes, fidelización"],1),
-        ("Logística y bodega central",["Por designar","Abastecimiento a los 13 locales"],1)]),
-     ("DISTRIBUCIÓN",["Luis David Teneda","Distribución, cartera y rutas"],"",[
-        ("Agencia Pingüino",["Luis David Teneda","Distribución, rutas y cadena de frío"],0),
-        ("Línea Unilever",["Luis David Teneda","Desarrollo de la línea de distribución"],0)]),
+        ("Asistentes administrativos (13)",["Uno por local","Apoyo administrativo al administrador"],1),
+        ("Percheros, cajeros y bodega",["Atención al cliente, reposición","y manejo de caja"],0)]),
+     ("COMERCIAL Y COMPRAS",["Luis David Teneda","Jefe de Comercial y Compras","Compras, precios y abastecimiento"],"",[
+        ("Compras y proveedores",["Mauro Carvajal","Negociación, compras y precios"],0),
+        ("Compras y proveedores",["Verónica Teneda","Negociación, compras y precios"],0),
+        ("Marketing y publicidad",["Verónica Teneda (supervisa)","Contrata proveedor externo de marketing"],0),
+        ("Logística y bodega central",["Jorge Leime","Abastecimiento a los 13 locales"],0)]),
+     ("DISTRIBUCIÓN",["Luis David Teneda","Jefe de Agencia Pingüino y","línea Unilever"],"",[
+        ("Agencia Pingüino y línea Unilever",["Administrador: Juan Carlos Vallejo","Rutas, cartera y cadena de frío"],1)]),
      ("AGROINDUSTRIA",["Por designar","Abastece a los supermercados","con producto propio"],"",[
-        ("Producción avícola",["Engorde y planta de proceso","Responsable por designar"],1),
-        ("Línea de verduras",["Cultivo y abastecimiento","Responsable por designar"],1),
-        ("Piscicultura",["Producción y manejo de truchas","Responsable por designar"],1)]),
-     ("ADMINISTRACIÓN Y FINANZAS",["Verónica Teneda","Contabilidad, tesorería y","servicios compartidos"],"",[
-        ("Contabilidad y tributaria",["Asistentes contables (6)","Registro, conciliaciones, reportes"],0),
+        ("Producción avícola",["Alexis Chiluiza y Javier (*)","Engorde y planta de proceso"],0),
+        ("Línea de verduras",["Rocío Gamboa y Luis Padilla (*)","Cultivo y abastecimiento"],0),
+        ("Pesados",["Alexis Chiluiza y Javier (*)","Área de pesados"],0)]),
+     ("TALENTO HUMANO",["Fernanda Teneda","Jefa de Talento Humano","Personal de todas las unidades"],"",[
+        ("Selección y contratación",["Fernanda Teneda","Reclutamiento e ingreso de personal"],0),
+        ("Nómina y beneficios",["Fernanda Teneda","Pago de personal y beneficios"],0),
+        ("Capacitación y desarrollo",["Fernanda Teneda","Formación y clima laboral"],0),
+        ("Asistente del departamento",["Por designar","Apoyo administrativo a Talento Humano"],1)]),
+     ("ADMINISTRACIÓN Y FINANZAS",["Martha Hidalgo","Jefa financiera","Servicios administrativos y de apoyo"],"",[
+        ("Contabilidad",["2 jefaturas (contable e inventarios)","y 7 puestos de equipo"],0,[
+            ("Jefatura contable",["Martha Ramírez"],0,1),
+            ("Contadora general",["Verónica Teneda"],0,2),
+            ("Técnico contable",["Cuadre de caja","Por designar"],1,2),
+            ("Técnico contable",["Comprobantes","Por designar"],1,2),
+            ("Técnico contable",["Efectivizaciones","Por designar"],1,2),
+            ("Jefatura de inventarios",["Paulina Gamboa"],0,1),
+            ("Asistente contable",["Ingreso de compras","Por designar"],1,2),
+            ("Asistente contable",["Manejo de matriz","Por designar"],1,2),
+            ("Asistente contable",["Bodegas y negociación","Por designar"],1,2)]),
         ("Tesorería",["Por designar","Cobros, pagos y bancos"],1),
-        ("Talento Humano",["Fernanda Teneda","Selección, nómina, capacitación"],0),
         ("Sistemas",["Ing. Jaime Pinela","Soporte tecnológico y redes"],0),
-        ("Mantenimiento, seguridad y limpieza",["Preventivo/correctivo, control","de instalaciones y sanidad"],0)])]
+        ("Mant., seguridad y limpieza",["Mantenimiento, seguridad","y limpieza de instalaciones"],0)])]
     for i,(t,ls,_,ch) in enumerate(cols):
+        ch=[c if len(c)==4 else c+(None,) for c in ch]
         x=x0+i*(w+gap);mx=x+w/2
         s.line(mx,bus,mx,hy) ; 
         fill,stroke=COL[i]
@@ -83,12 +96,35 @@ def build(func):
         y=hy+hh
         chh=84 if func else 46
         cg=20
-        for (ct,cl,cp) in ch:
+        for (ct,cl,cp,subs) in ch:
             s.line(mx,y,mx,y+cg)
             y+=cg
             s.box(x+10,y,w-20,chh,ct,cl if func else [],fill=fill,stroke=stroke,pending=bool(cp) and func,tsize=14.5,lsize=12)
             y+=chh
-    xs=[x0+i*(w+gap)+w/2 for i in range(5)]
+            if subs:
+                sg=8; pos=[]
+                y+=10
+                for (st,sl,sp,lv) in subs:
+                    sh=(40 if func else 34) if lv==1 else (52 if func else 44)
+                    ind=34 if lv==1 else 52
+                    pend="Por designar" in sl[-1]
+                    if func: s.box(x+ind,y,w-ind-14,sh,st,sl,fill="#fff",stroke=stroke,pending=pend,tsize=12.5,lsize=11)
+                    else: s.box(x+ind,y,w-ind-14,sh,st,sl[:1] if lv==2 else [],fill="#fff",stroke=stroke,tsize=12.5,lsize=11)
+                    pos.append((y,sh,lv)); y+=sh+sg
+                l1=[p for p in pos if p[2]==1]
+                s.line(x+22,pos[0][0]-10,x+22,l1[-1][0]+l1[-1][1]/2)
+                for (py_,ph,lv) in l1: s.line(x+22,py_+ph/2,x+34,py_+ph/2)
+                for k,(py_,ph,lv) in enumerate(pos):
+                    if lv==1:
+                        kids=[]
+                        for q in pos[k+1:]:
+                            if q[2]==1: break
+                            kids.append(q)
+                        if kids:
+                            s.line(x+46,py_+ph,x+46,kids[-1][0]+kids[-1][1]/2)
+                            for q in kids: s.line(x+46,q[0]+q[1]/2,x+52,q[0]+q[1]/2)
+                y+=2
+    xs=[x0+i*(w+gap)+w/2 for i in range(6)]
     s.line(xs[0],bus,xs[-1],bus)
     # legend
     ly=H-96
@@ -96,7 +132,7 @@ def build(func):
     s.line(60,ly+46,110,ly+46);s.text(118,ly+51,"Línea de autoridad",13,"start")
     s.line(270,ly+46,320,ly+46,True);s.text(328,ly+51,"Asesoría / control independiente",13,"start")
     s.o.append(f'<rect x="590" y="{ly+36}" width="34" height="20" rx="4" fill="#fff7d6" stroke="#d08a00" stroke-width="2" stroke-dasharray="5 3"/>')
-    s.text(632,ly+51,"Por designar",13,"start")
+    s.text(632,ly+51,"Por designar",13,"start");s.text(40,ly-10,"(*) Apellido por confirmar",12,"start")
     if func: s.box(840,ly,920,70,"PROPÓSITO",["Brindar a nuestros clientes productos de calidad, con excelente servicio y los mejores precios."],fill="#eef4fb",stroke="#3b6cb7",tsize=14)
     return f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="Helvetica,Arial,sans-serif"><rect width="100%" height="100%" fill="#fff"/>'+"".join(s.o)+'</svg>'
 open("organigrama_estructural_propuesto.svg","w").write(build(False))
