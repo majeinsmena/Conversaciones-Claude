@@ -70,14 +70,13 @@ def build(func):
         ("Técnico de bodega",["Por designar","Reparación de fríos"],1)]),
      ("AGROINDUSTRIA",["Por designar","Distribución, pesado y empaque","para los locales"],"",[
         ("Distribución avícola",["Alexis Chiluiza y Javier (*)","Distribución del pollo"],0),
-        ("Chofer de distribución de pollo",["José Haro","Transporte y entrega del pollo"],0),
         ("Distribución de verduras",["Rocío Gamboa y Luis Padilla (*)","Abastecimiento de verduras"],0),
         ("Distribución de pesados",["Alexis Chiluiza y Javier (*)","Pesan avena, fideos, arroz a granel","y empacan en varios gramajes"],0)]),
      ("PRODUCCIÓN",["Crianza y faenamiento de pollo:","granja, proceso y transporte"],"",[
         ("Jefe de granja",["Holger Tipán","Coordinación de la granja,","bioseguridad y personal"],0),
         ("Galponero y asistente de granja",["Por designar","Cuidado de aves,","alimentación y registros"],1),
         ("Faenadores y preparados",["Por designar","Faenado, proceso y","empaque del pollo"],1),
-        ("Choferes de producción",["Por designar","Traslado, refrigerado","y entrega del pollo"],1)]),
+        ("Chofer de producción",["José Haro","Traslado, refrigerado","y entrega del pollo"],0)]),
      ("ADMINISTRACIÓN Y FINANZAS",["Martha Hidalgo","Jefa financiera","Servicios administrativos y de apoyo"],"",[
         ("Contabilidad",["Contadora general, 2 jefaturas","y 7 puestos de equipo"],0,[
             ("Contadora general",["Verónica Teneda"],0,1),
