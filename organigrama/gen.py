@@ -64,9 +64,10 @@ def build(func):
         ("Choferes de logística",["Por designar","Transporte a los 13 locales"],1)]),
      ("DISTRIBUCIÓN",["Luis David Teneda","Jefe de Agencia Pingüino y","línea Unilever"],"",[
         ("Agencia Pingüino y línea Unilever",["Administrador: Juan Carlos Vallejo","Rutas, cartera y cadena de frío"],0),
-        ("Vendedores",["Por designar","Venta en ruta y atención a clientes"],1),
-        ("Choferes",["Por designar","Transporte y entrega de pedidos"],1),
-        ("Despachadores",["Por designar","Preparación y despacho de pedidos"],1)]),
+        ("Vendedores (4)",["Por designar","Venta en ruta y atención a clientes"],1),
+        ("Choferes (2)",["Por designar","Transporte y entrega de pedidos"],1),
+        ("Despachador (1)",["Por designar","Preparación y despacho de pedidos"],1),
+        ("Técnico de bodega",["Por designar","Reparación de fríos"],1)]),
      ("AGROINDUSTRIA",["Por designar","Distribución, pesado y empaque","para los locales"],"",[
         ("Distribución avícola",["Alexis Chiluiza y Javier (*)","Distribución del pollo"],0),
         ("Distribución de verduras",["Rocío Gamboa y Luis Padilla (*)","Abastecimiento de verduras"],0),
