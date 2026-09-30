@@ -66,10 +66,10 @@ def build(func):
         ("Vendedores",["Por designar","Venta en ruta y atención a clientes"],1),
         ("Choferes",["Por designar","Transporte y entrega de pedidos"],1),
         ("Despachadores",["Por designar","Preparación y despacho de pedidos"],1)]),
-     ("AGROINDUSTRIA",["Por designar","Distribución de pollo y verduras","a los supermercados"],"",[
+     ("AGROINDUSTRIA",["Por designar","Distribución, pesado y empaque","para los locales"],"",[
         ("Distribución avícola",["Alexis Chiluiza y Javier (*)","Distribución del pollo"],0),
         ("Distribución de verduras",["Rocío Gamboa y Luis Padilla (*)","Abastecimiento de verduras"],0),
-        ("Pesados",["Alexis Chiluiza y Javier (*)","Pesado y despacho"],0)]),
+        ("Pesados",["Alexis Chiluiza y Javier (*)","Pesan avena, fideos, arroz a granel","y empacan en varios gramajes"],0)]),
      ("PRODUCCIÓN",["Crianza y faenamiento de pollo:","granja, proceso y transporte"],"",[
         ("Jefe de granja",["Oliver Tipán","Coordinación de la granja,","bioseguridad y personal"],0),
         ("Galponero y asistente de granja",["Por designar","Cuidado de aves,","alimentación y registros"],1),
