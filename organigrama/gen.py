@@ -91,7 +91,7 @@ def build(func):
             ("Técnico contable",["Efectivizaciones","Michelle Padilla"],0,2),
             ("Jefatura de inventarios",["Paulina Gamboa"],0,1),
             ("Asistente contable",["Ingreso de facturas","Joel Izurieta"],0,2),
-            ("Asistente contable",["Creación de productos","Diego Bonillas"],0,2),
+            ("Asistente contable",["Creación de productos","Diego Bonilla"],0,2),
             ("Asistente contable",["Ingreso de facturas","Sebastian Flores"],0,2)]),
         ("Tesorería",["Por designar","Cobros, pagos y bancos"],1),
         ("Sistemas",["Ing. Jaime Pinela","Soporte tecnológico y redes"],0),
