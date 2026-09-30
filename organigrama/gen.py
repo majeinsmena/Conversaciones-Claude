@@ -1,6 +1,6 @@
 import html
 W=2070
-COL=[("#fff4e0","#e0a030"),("#e4f3e4","#3c8c3c"),("#e6eefb","#3b6cb7"),("#f1e8fa","#7a4ab0"),("#eaf1dc","#6f8f2a"),("#fde8f1","#c0478a"),("#e3f4f4","#2a8c8c")]
+COL=[("#fff4e0","#e0a030"),("#e4f3e4","#3c8c3c"),("#e6eefb","#3b6cb7"),("#f1e8fa","#7a4ab0"),("#eaf1dc","#6f8f2a"),("#e3f4f4","#2a8c8c"),("#fde8f1","#c0478a")]
 GREEN=("#e4f3e4","#3c8c3c")
 def esc(s):return html.escape(s)
 class S:
@@ -76,11 +76,6 @@ def build(func):
         ("Galponero y asistente de granja",["Por designar","Cuidado de aves,","alimentación y registros"],1),
         ("Faenadores y preparados",["Por designar","Faenado, proceso y","empaque del pollo"],1),
         ("Choferes de producción",["Por designar","Traslado, refrigerado","y entrega del pollo"],1)]),
-     ("TALENTO HUMANO",["Fernanda Teneda","Jefa de Talento Humano","Personal de todas las unidades"],"",[
-        ("Selección y contratación",["Fernanda Teneda","Reclutamiento e ingreso de personal"],0),
-        ("Nómina y beneficios",["Fernanda Teneda","Pago de personal y beneficios"],0),
-        ("Capacitación y desarrollo",["Fernanda Teneda","Formación y clima laboral"],0),
-        ("Asistente del departamento",["Por designar","Apoyo administrativo a Talento Humano"],1)]),
      ("ADMINISTRACIÓN Y FINANZAS",["Martha Hidalgo","Jefa financiera","Servicios administrativos y de apoyo"],"",[
         ("Contabilidad",["Contadora general, 2 jefaturas","y 7 puestos de equipo"],0,[
             ("Contadora general",["Verónica Teneda"],0,1),
@@ -95,11 +90,20 @@ def build(func):
             ("Asistente contable",["Ingreso de facturas","Sebastian Flores"],0,2)]),
         ("Tesorería",["Grace Aldaz","Cobros, pagos y bancos"],0),
         ("Sistemas",["Ing. Jaime Pinela","Soporte tecnológico y redes"],0),
-        ("Mant., seguridad y limpieza",["Mantenimiento, seguridad","y limpieza de instalaciones"],0)])]
+        ("Mant., seguridad y limpieza",["Mantenimiento, seguridad","y limpieza de instalaciones"],0)]),
+     ("TALENTO HUMANO",["Fernanda Teneda","Jefa de Talento Humano","Personal de todas las unidades"],"",[
+        ("Selección y contratación",["Fernanda Teneda","Reclutamiento e ingreso de personal"],0),
+        ("Nómina y beneficios",["Fernanda Teneda","Pago de personal y beneficios"],0),
+        ("Capacitación y desarrollo",["Fernanda Teneda","Formación y clima laboral"],0),
+        ("Asistente del departamento",["Por designar","Apoyo administrativo a Talento Humano"],1)])]
     for i,(t,ls,_,ch) in enumerate(cols):
         ch=[c if len(c)==4 else c+(None,) for c in ch]
         x=x0+i*(w+gap);mx=x+w/2
-        s.line(mx,bus,mx,hy) ; 
+        if i==6:
+            ym=gy+(45 if func else 28)
+            s.line(cx+200,ym,mx,ym,True); s.line(mx,ym,mx,hy,True)
+            s.text((cx+200+mx)/2,ym-8,"Apoyo transversal a todas las áreas",12,fill="#555")
+        else: s.line(mx,bus,mx,hy)
         fill,stroke=COL[i]
         pend=("Por designar" in ls[0]) if func else False
         s.box(x,hy,w,hh,t,ls if func else [],fill=fill,stroke=stroke,pending=pend,tsize=16)
@@ -135,13 +139,13 @@ def build(func):
                             s.line(x+46,py_+ph,x+46,kids[-1][0]+kids[-1][1]/2)
                             for q in kids: s.line(x+46,q[0]+q[1]/2,x+52,q[0]+q[1]/2)
                 y+=2
-    xs=[x0+i*(w+gap)+w/2 for i in range(7)]
+    xs=[x0+i*(w+gap)+w/2 for i in range(6)]
     s.line(xs[0],bus,xs[-1],bus)
     # legend
     ly=H-96
     s.box(40,ly,760,70,"",[],fill="#fafafa",stroke="#999",tsize=14);s.text(420,ly+20,"SIMBOLOGÍA",14,weight="700")
     s.line(60,ly+46,110,ly+46);s.text(118,ly+51,"Línea de autoridad",13,"start")
-    s.line(270,ly+46,320,ly+46,True);s.text(328,ly+51,"Asesoría / control independiente",13,"start")
+    s.line(270,ly+46,320,ly+46,True);s.text(328,ly+51,"Asesoría / apoyo transversal",13,"start")
     s.o.append(f'<rect x="590" y="{ly+36}" width="34" height="20" rx="4" fill="#fff7d6" stroke="#d08a00" stroke-width="2" stroke-dasharray="5 3"/>')
     s.text(632,ly+51,"Por designar",13,"start");s.text(40,ly-10,"(*) Apellido por confirmar",12,"start")
     if func: s.box(840,ly,920,70,"PROPÓSITO",["Brindar a nuestros clientes productos de calidad, con excelente servicio y los mejores precios."],fill="#eef4fb",stroke="#3b6cb7",tsize=14)
