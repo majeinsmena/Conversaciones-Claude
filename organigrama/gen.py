@@ -93,7 +93,7 @@ def build(func):
             ("Asistente contable",["Ingreso de facturas","Joel Izurieta"],0,2),
             ("Asistente contable",["Creación de productos","Diego Bonilla"],0,2),
             ("Asistente contable",["Ingreso de facturas","Sebastian Flores"],0,2)]),
-        ("Tesorería",["Por designar","Cobros, pagos y bancos"],1),
+        ("Tesorería",["Grace Aldaz","Cobros, pagos y bancos"],0),
         ("Sistemas",["Ing. Jaime Pinela","Soporte tecnológico y redes"],0),
         ("Mant., seguridad y limpieza",["Mantenimiento, seguridad","y limpieza de instalaciones"],0)])]
     for i,(t,ls,_,ch) in enumerate(cols):
